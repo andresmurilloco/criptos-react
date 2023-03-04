@@ -6,6 +6,8 @@ interface ErrorBoundaryState{
     hasError: boolean;
 }
 
+const imagen = new Image(ImagenError);
+
 class ErrorBoundary extends Component <ErrorBoundaryProps, ErrorBoundaryState>{
     constructor(props: ErrorBoundaryProps) {
       super(props);
@@ -28,8 +30,8 @@ class ErrorBoundary extends Component <ErrorBoundaryProps, ErrorBoundaryState>{
       if (this.state.hasError) {
         return (
           <>
-            <h1>Algo salió mal.</h1>
-            <img src={ImagenError} />
+            <h1>Something went wrong.</h1>
+            <img src={ImagenError} alt="Imagen" />
           </>
         );
       }
