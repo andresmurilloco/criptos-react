@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { ErrorBoundary } from 'react-error-boundary';
+import { useState,useEffect } from 'react';
 import styled from "@emotion/styled";
 
 //Components
@@ -47,14 +48,20 @@ const Heading = styled.h1`
 
 function App() {
 
+  useEffect(() => {
+    
+  }, [])
+
   return (
-    <Contenedor>
-      <Imagen src={ImagenCripto} alt='Imagen Cripto'></Imagen>
-      <div>
-        <Heading>Cotiza Criptomonedas al Instante</Heading>
-        <Formulario></Formulario>
-      </div> 
-    </Contenedor>
+    <ErrorBoundary>
+      <Contenedor>
+        <Imagen src={ImagenCripto} alt='Imagen Cripto'></Imagen>
+        <div>
+          <Heading>Cotiza Criptomonedas al Instante</Heading>
+          <Formulario></Formulario>
+        </div> 
+      </Contenedor>
+    </ErrorBoundary>
   )
 }
 
