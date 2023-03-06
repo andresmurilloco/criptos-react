@@ -71,17 +71,15 @@ function App() {
   }, [monedas])
 
   return (
-    <ErrorBoundary>
-      <Contenedor>
-        <Imagen src={ImagenCripto} alt='Imagen Cripto'></Imagen>
-        <div>
-          <Heading>Cotiza Criptomonedas al Instante</Heading>
-          <Formulario setMonedas={setMonedas} ></Formulario>
-          {cargando && <Spinner/>}
-          {resultado.PRICE && <Resultado resultado={resultado}/>}
-        </div> 
-      </Contenedor>
-    </ErrorBoundary>
+    <Contenedor>
+      <Imagen src={ImagenCripto} alt='Imagen Cripto'></Imagen>
+      <div>
+        <Heading>Cotiza Criptomonedas al Instante</Heading>
+        <Formulario setMonedas={setMonedas} ></Formulario>
+        {cargando && <Spinner/>}
+        {resultado.PRICE && <Resultado resultado={resultado}/>}
+      </div> 
+    </Contenedor>
   )
 }
 

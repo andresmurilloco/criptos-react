@@ -1,4 +1,4 @@
-import { Component } from "react";
+import React, { Component } from "react";
 import ImagenError from "../img/error.gif";
 
 interface ErrorBoundaryProps{}
